@@ -19,6 +19,10 @@ int main() {
     string b = "def";
     string c = a + b; // c = "abcdef".
     
+    // add char to string
+
+    string a += 'c';
+    
     // Accessing  element:
 
     string s = "abc";
