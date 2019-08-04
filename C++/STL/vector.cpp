@@ -7,20 +7,36 @@ int main() {
 
 //Declaration:
 	vector<int>v; (creates an empty vector of integers);
-		
+
 	vector<int> v(2, 100);   // =>  [100,100];
+
+        // constructors used in the same order as described above:
+    vector<int> first;                                // empty vector of ints
+    vector<int> second (4,100);                       // four ints with value 100
+    vector<int> third (second.begin(),second.end());  // iterating through second
+    vector<int> fourth (third);                       // a copy of third
+
+    // the iterator constructor can also be used to construct from arrays:
+    int myints[] = {16,2,77,29};
+    std::vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
+
+    std::cout << "The contents of fifth are:";
+    for (std::vector<int>::iterator it = fifth.begin(); it != fifth.end(); ++it)
+        std::cout << ' ' << *it;
+    std::cout << '\n';
+
 //Size :
 
 		int size = v.size();
-	
+
 //Pushing an integer into a vector :
 
 	v.push_back(x); (where x is an integer.The size increases by 1 after this.);
-		
+
 //Popping the last element from the vector :
 
 	v.pop_back(); (After this the size decreases by 1);
-		
+
 // Sorting a vector :
 
 	sort(v.begin(), v.end()); (Will sort all the elements in the vector);
@@ -33,16 +49,16 @@ v.rbegin() //: Return reverse iterator to reverse beginning (public member funct
 v.rend() //: Return reverse iterator to reverse end (public member function )
 
 
-// single element (1)	
+// single element (1)
 	iterator insert (const_iterator position, const value_type& val);
-// fill (2)	
+// fill (2)
 	iterator insert (const_iterator position, size_type n, const value_type& val);
-// range (3)	
+// range (3)
 	template <class InputIterator>
 	iterator insert (const_iterator position, InputIterator first, InputIterator last);
-// move (4)	
+// move (4)
 	iterator insert (const_iterator position, value_type&& val);
-// initializer list (5)	
+// initializer list (5)
 	iterator insert (const_iterator position, initializer_list<value_type> il);
 
 			std::vector<int> myvector (3,100);
@@ -67,6 +83,22 @@ v.rend() //: Return reverse iterator to reverse end (public member function )
 			std::cout << ' ' << *it;
 			std::cout << '\n';
 
+
+// 2D VECTORS
+
+    vector<vector<int> > vect{ { 1, 2, 3 },
+                               { 4, 5, 6 },
+                               { 7, 8, 9 } };
+
+    // Displaying the 2D vector
+    for (int i = 0; i < vect.size(); i++) {
+        for (int j = 0; j < vect[i].size(); j++)
+            cout << vect[i][j] << " ";
+        cout << endl;
+    }
+
+    // will intialize a 2d vector if size 4,5 with defult value 1 : fill constructor
+    vector<vector<int>> vect(4, vector<int>(5, 1));
 
 	return 0;
 }
