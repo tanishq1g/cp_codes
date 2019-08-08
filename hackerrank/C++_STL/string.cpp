@@ -12,17 +12,17 @@ int main() {
     // Size:
 
     int len = a.size();
-    
+
     // Concatenate two strings:
 
     string a = "abc";
     string b = "def";
     string c = a + b; // c = "abcdef".
-    
+
     // add char to string
 
     string a += 'c';
-    
+
     // Accessing  element:
 
     string s = "abc";
@@ -51,4 +51,12 @@ When pos is specified, the search only includes characters at or after position 
     s[0] = 'z';         // s = "zbc"
     P.S.: We will use cin/cout to read/write a string.
 
+
+for ( std::string::iterator it=str.begin(); it!=str.end(); ++it)
+    std::cout << *it;
+  std::cout << '\n';
+
+string s = "Aa";
+tolower(s)
+toupper(s)
 }
