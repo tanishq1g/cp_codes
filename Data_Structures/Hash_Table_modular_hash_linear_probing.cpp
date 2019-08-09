@@ -57,7 +57,7 @@ Record search(int key) {
 void delete(int key) {
    int i = hash(key);
    Record r;
- 
+
    while (record_table[i] != NULL) {
       if (key == record_table[i]->key) {
          break;
@@ -65,13 +65,13 @@ void delete(int key) {
          i = (i + 1) % M;
       }
    }
-   
+
    if (record_table[i] == NULL) {
       return;
    }
-   
+
    record_table[i] = NULL;
-   
+
    for (i = (i + 1) % M; record_table[i] != NULL; i = (i + 1) % M) {
       r = record_table[i];
       record_table[i] = NULL;
@@ -90,31 +90,31 @@ void delete(int key) {
 int main(void) {
 	int i;
 	Record a;
-	
+
 	srand(time(NULL));
-	
+
 	// Initialize the hash table
 	init();
-	
+
 	// Insert N random records
 	for (i = 0; i < N; ++i) {
-	
+
 		// Generate new random record
 		a = malloc(sizeof(*a));
 		a->key = rand() % MAXVAL;
 		a->value = rand() % MAXVAL;
-		
+
 		// Don't allow duplicate keys
 		if (search(a->key) != NULL) {
 			--i;
 			continue;
 		}
-		
+
 		// Insert new record
 		printf("Inserting: Key => %i, Value => %i\n", a->key, a->value);
 		insert(a);
 	}
-	
+
 	// Search and delete records for all possible keys
 	for (i = 0; i < MAXVAL; ++i) {
 		if ((a = search(i)) != NULL) {
@@ -122,6 +122,6 @@ int main(void) {
 			delete(a->key);
 		}
 	}
-	
+
 	return 0;
 }
