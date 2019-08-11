@@ -5,6 +5,7 @@
 #include <cstdlib>
 using namespace std;
 
+// OVERFLOW CONDITION INT MAX
 class Solution {
 public:
     int reverse(int x) {
@@ -34,6 +35,6 @@ int main() {
 	int x;
     cin >> x;
     // cout << (x/10) << ' '<<(x%10);
-	cout << sol.reverse(x);	
+	cout << sol.reverse(x);
 	return 0;
 }

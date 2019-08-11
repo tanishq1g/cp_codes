@@ -83,6 +83,8 @@ v.rend() //: Return reverse iterator to reverse end (public member function )
 			std::cout << ' ' << *it;
 			std::cout << '\n';
 
+// concatenating two vectors
+vector1.insert( vector1.end(), vector2.begin(), vector2.end() );
 
 // 2D VECTORS
 

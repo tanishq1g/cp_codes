@@ -23,5 +23,19 @@ int main() {
 //
     umap.find(23)
 
+unordered_map::erase
+
+by position (1)
+iterator erase ( const_iterator position );
+by key (2)
+size_type erase ( const key_type& k );
+range (3)
+iterator erase ( const_iterator first, const_iterator last );
+
+// erase examples:
+  mymap.erase ( mymap.begin() );      // erasing by iterator
+  mymap.erase ("France");             // erasing by key
+  mymap.erase ( mymap.find("China"), mymap.end() ); // erasing by range
+
 
 }
