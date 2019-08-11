@@ -48,5 +48,8 @@ int main() {
 
 
 	result = pow(base, exponent);
+
+    double x = 10.25, result;
+	result = sqrt(x)
     return 0;
 }
