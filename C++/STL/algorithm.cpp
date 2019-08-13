@@ -51,5 +51,8 @@ int main() {
 
     double x = 10.25, result;
 	result = sqrt(x)
+
+// sorting strings
+    sort(str.begin(), sort.end());
     return 0;
 }

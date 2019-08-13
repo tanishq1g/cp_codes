@@ -12,7 +12,7 @@ using namespace std;
 
 // Max Heap: In this type of heap, the value of parent node will always be greater than or equal to the value of child node across the tree and the node with highest value will be the root node of the tree.
 
-// heapify = make the array satisfy the conditions of the heap
+// heapify = make the elements satisfy the conditions of the heap
 
 // heapify a particular node in the heap
 // O(logn)
@@ -29,7 +29,7 @@ void max_heapify (int Arr[ ], int i, int N)
     if(largest != i )
     {
         swap (Arr[i] , Arr[largest]);
-        max_heapify (Arr, largest,N);
+        max_heapify (Arr, largest, N);
     }
 }
 
