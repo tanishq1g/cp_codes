@@ -40,6 +40,48 @@ void inorder(struct node*root)
         }
     }
 
+void inorder(struct node * root){
+    stack<node*> st;
+    node * cur;
+    while(cur || !st.empty()){
+        if(cur){
+            st.push(cur);
+            cur = cur->left;
+        }
+        else{
+            cur = st.top();
+            st.pop();
+            out<<cur->val;
+            cur = cur->right;
+        }
+    }
+}
+
+// MORRIS TRAVEL
+vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        TreeNode* cur = root;
+        while(cur) {
+            if(!cur->left) {
+                ans.push_back(cur->val);
+                cur = cur->right;
+            } else {
+                TreeNode* pred = cur->left;
+                while(pred->right && pred->right != cur) pred = pred->right;
+                if(!pred->right) {
+                    pred->right = cur;
+                    cur = cur->left;
+                } else {
+                    pred->right = nullptr;
+                    ans.push_back(cur->val);
+                    cur = cur->right;
+                }
+            }
+        }
+
+
+        
+
 // INSERTION IN BST
 
 // Compare data of the root node and element to be inserted.

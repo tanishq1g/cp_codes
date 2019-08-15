@@ -54,5 +54,16 @@ int main() {
 
 // sorting strings
     sort(str.begin(), sort.end());
+
+//sorting based on comparator
+static bool comparator( vector<int>& a, vector<int>& b )
+    {
+        return a[0] < b[0];
+    }
+    vector<vector<int>>& intervals
+    //Sort the inetrvals first based on the start of interval
+        sort( intervals.begin(), intervals.end(), comparator );
+
+        
     return 0;
 }
