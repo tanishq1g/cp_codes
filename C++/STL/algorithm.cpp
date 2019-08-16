@@ -64,6 +64,17 @@ static bool comparator( vector<int>& a, vector<int>& b )
     //Sort the inetrvals first based on the start of interval
         sort( intervals.begin(), intervals.end(), comparator );
 
-        
+// find
+Returns an iterator to the first element in the range [first,last) that compares equal to val. If no such element is found, the function returns last.
+// using std::find with vector and iterator:
+  std::vector<int> myvector { 10, 20, 30, 40 };
+  std::vector<int>::iterator it;
+
+  it = find (myvector.begin(), myvector.end(), 30);
+  if (it != myvector.end())
+    std::cout << "Element found in myvector: " << *it << '\n';
+  else
+    std::cout << "Element not found in myvector\n";
+
     return 0;
 }
