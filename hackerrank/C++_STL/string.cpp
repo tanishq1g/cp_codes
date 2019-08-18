@@ -47,7 +47,7 @@ std::string str ("There are two needles in this haystack with needles.");
   std::size_t found = str.find(str2);
 Searches the string for the first occurrence of the sequence specified by its arguments.
 When pos is specified, the search only includes characters at or after position pos, ignoring any possible occurrences that include characters before pos.
-
+if no match returns -1
     s[0] = 'z';         // s = "zbc"
     P.S.: We will use cin/cout to read/write a string.
 
