@@ -1,0 +1,35 @@
+In Amortized Analysis, we analyze a sequence of operations and guarantee a worst case average time which is lower than the worst case time of a particular expensive operation.
+
+The example data structures whose operations are analyzed using Amortized Analysis are Hash Tables, Disjoint Sets and Splay Trees.
+
+Amortized cost of a sequence of operations can be seen as expenses of a salaried person. The average monthly expense of the person is less than or equal to the salary, but the person can spend more money in a particular month by buying a car or something. In other months, he or she saves money for the expensive month.
+
+
+Amortized Analysis
+
+
+http://www.cs.cornell.edu/courses/cs3110/2011sp/Lectures/lec20-amortized/amortized.htm
+
+The claim that hash tables have O(1) expected performance for lookup and insert is based on the assumption that the number of elements stored in the table is comparable to the number of buckets. If a hash table has many more elements than buckets, the number of elements stored at each bucket will become large. For instance, with a constant number of buckets and O(n) elements, the lookup time is O(n) and not O(1).
+The solution to this problem is to increase the size of the table when the number of elements in the table gets too large compared to the size of the table. If we let the load factor be the ratio of the number of elements to the number of buckets, when the load factor exceeds some small constant (typically 2 for chaining and .75 for linear probing), we allocate a new table, typically double the size of the old table, and rehash all the elements into the new table. This operation is not constant time, but rather linear in the number of elements at the time the table is grown.
+The linear running time of a resizing operation is not as much of a problem as it might sound (although it can be an issue for some real-time computing systems). If the table is doubled in size every time it is needed, then the resizing operation occurs with exponentially decreasing frequency. As a consequence, the insertion of n elements into an empty array takes only O(n) time in all, including the cost of resizing. We say that the insertion operation has O(1) amortized run time because the time required to insert an element is O(1) on average, even though some elements trigger a lengthy rehashing of all the elements of the hash table.
+It is crucial that the array size grow geometrically (doubling). It might be tempting to grow the array by a fixed increment (e.g., 100 elements at time), but this results in asymptotic linear rather than constant amortized running time.
+
+
+
+Time Complexity of building a heap
+
+Consider the following algorithm for building a Heap of an input array A.
+
+BUILD-HEAP(A) 
+    heapsize := size(A); 
+    for i := floor(heapsize/2) downto 1 
+        do HEAPIFY(A, i); 
+    end for 
+END
+
+A quick look over the above algorithm suggests that the running time is O(nlg(n)), since each call to Heapify costs O(lg(n)) and Build-Heap makes O(n) such calls.
+This upper bound, though correct, is not asymptotically tight.
+https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/
+
+Hence Proved that the Time complexity for Building a Binary Heap is O(n).

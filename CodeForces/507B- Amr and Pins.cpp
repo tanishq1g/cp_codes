@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <locale>
+#include <algorithm>
+#include <cmath>
+#include <unordered_map>
+#include <iomanip> 
+using namespace std;
+
+
+int main(){
+    int r, x1, y1, x2, y2;
+    cin >> r >> x1 >> y1 >> x2 >> y2;
+    double d = sqrt(pow(y2 - y1, 2.0) + pow(x2 - x1, 2.0));
+    cout << (int)(ceil)(d / r / 2) << endl;
+    return 0;
+}

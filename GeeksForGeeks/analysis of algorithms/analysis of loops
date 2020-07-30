@@ -1,0 +1,154 @@
+1) O(1): if set of non-recursive and non-loop statements
+
+2) O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount. For example following functions have O(n) time complexity.
+
+   // Here c is a positive integer constant   
+   for (int i = 1; i <= n; i += c) {  
+        // some O(1) expressions
+   }
+
+3) O(nc): Time complexity of nested loops is equal to the number of times the innermost statement is executed. For example the following sample loops have O(n2) time complexity
+
+  
+   for (int i = 1; i <=n; i += c) {
+       for (int j = 1; j <=n; j += c) {
+          // some O(1) expressions
+       }
+   }
+
+4) O(Logn) Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+
+   for (int i = 1; i <=n; i *= c) {
+       // some O(1) expressions
+   }
+   for (int i = n; i > 0; i /= c) {
+       // some O(1) expressions
+   }
+
+5) O(LogLogn) Time Complexity of a loop is considered as O(LogLogn) if the loop variables is reduced / increased exponentially by a constant amount.
+
+   // Here c is a constant greater than 1   
+   for (int i = 2; i <=n; i = pow(i, c)) { 
+       // some O(1) expressions
+   }
+   here i takes values  2, 2k, (2k)k = 2k2, (2k2)k = 2k3, …, 2klogk(log(n)). The last term must be less than or equal to n, and we have 2klogk(log(n)) = 2log(n) = n, which completely agrees with the value of our last term. So there are in total logk(log(n)) many iterations, and each iteration takes a constant amount of time to run, therefore the total time complexity is O(log(log(n))).
+
+   //Here fun is sqrt or cuberoot or any other constant root
+   for (int i = n; i > 1; i = fun(i)) { 
+       // some O(1) expressions
+   }
+   In this case, i takes values n, n1/k, (n1/k)1/k = n1/k2, n1/k3, …, n1/klogk(log(n)), so there are in total logk(log(n)) iterations and each iteration takes time O(1), so the total time complexity is O(log(log(n))).
+
+
+
+How to calculate time complexity when there are many if, else statements inside loops?
+
+As discussed here, worst case time complexity is the most useful among best, average and worst. Therefore we need to consider worst case. We evaluate the situation when values in if-else conditions cause maximum number of statements to be executed
+
+
+
+
+void fun() 
+{ 
+   int i, j; 
+   for (i=1; i<=n; i++) 
+      for (j=1; j<=log(i); j++) 
+         printf("GeeksforGeeks"); 
+} 
+Time Complexity of the above function can be written as Θ(log 1) + Θ(log 2) + Θ(log 3) + . . . . + Θ(log n) which is Θ (log n!)
+
+Order of growth of ‘log n!’ and ‘n log n’ is same for large values of n, i.e., Θ (log n!) = Θ(n log n). So time complexity of fun() is Θ(n log n).
+
+
+
+What is the time complexity of below code?
+
+filter_none
+edit
+play_arrow
+brightness_4
+void fun(int n) 
+{ 
+   int j = 1, i = 0; 
+   while (i < n) 
+   { 
+       // Some O(1) task 
+       i = i + j; 
+       j++; 
+   } 
+} 
+The loop variable ‘i’ is incremented by 1, 2, 3, 4, … until i becomes greater than or equal to n.
+
+The value of i is x(x+1)/2 after x iterations. So if loop runs x times, then x(x+1)/2 < n. Therefore time complexity can be written as Θ(√n). 
+
+
+
+What is the time complexity of below function?
+
+filter_none
+edit
+play_arrow
+brightness_4
+void fun(int n, int k) 
+{ 
+    for (int i=1; i<=n; i++) 
+    { 
+      int p = pow(i, k);  
+      for (int j=1; j<=p; j++) 
+      { 
+          // Some O(1) work 
+      } 
+    } 
+} 
+Time complexity of above function can be written as 1k + 2k + 3k + … n1k.
+
+Let us try few examples:
+
+k=1
+Sum = 1 + 2 + 3 ... n 
+    = n(n+1)/2 
+    = n2 + n/2
+
+k=2
+Sum = 12 + 22 + 32 + ... n12.
+    = n(n+1)(2n+1)/6
+    = n3/3 + n2/2 + n/6
+
+k=3
+Sum = 13 + 23 + 33 + ... n13.
+    = n2(n+1)2/4
+    = n4/4 + n3/2 + n2/4     
+In general, asymptotic value can be written as (nk+1)/(k+1) + Θ(n^k)
+
+Note that, in asymptotic notations like Θ we can always ignore lower order terms. So the time complexity is Θ(n^k+1 / (k+1))
+
+
+
+
+The difference between the orders lies in which elements of an array are contiguous in memory. In a row-major order, the consecutive elements of a row reside next to each other, whereas the same holds true for consecutive elements of a column in a column-major order.
+
+
+Consider below two C language functions to compute sum of elements in a 2D array. Ignoring the compiler optimizations, which of the two is better implementation of sum?
+
+filter_none
+edit
+play_arrow
+brightness_4
+// Function 1 
+int fun1(int arr[R][C]) 
+{ 
+    int sum = 0; 
+    for (int i=0; i<R; i++) 
+      for (int j=0; j<C; j++) 
+          sum += arr[i][j]; 
+} 
+  
+// Function 2 
+int fun2(int arr[R][C]) 
+{ 
+    int sum = 0; 
+    for (int j=0; j<C; j++) 
+      for (int i=0; i<R; i++) 
+          sum += arr[i][j]; 
+} 
+In C/C++, elements are stored in Row-Major order. So the first implementation has better spatial locality (nearby memory locations are referenced in successive iterations). Therefore, first implementation should always be preferred for iterating multidimensional arrays.

@@ -10,13 +10,14 @@ int main() {
 
 	vector<int> v(2, 100);   // =>  [100,100];
 
-        // constructors used in the same order as described above:
-    vector<int> first;                                // empty vector of ints
+    // constructors used in the same order as described above:
+    vector<int> first;       
+    // empty vector of ints
     vector<int> second (4,100);                       // four ints with value 100
     vector<int> third (second.begin(),second.end());  // iterating through second
     vector<int> fourth (third);                       // a copy of third
 
-    // the iterator constructor can also be used to construct from arrays:
+// the iterator constructor can also be used to construct from arrays:
     int myints[] = {16,2,77,29};
     std::vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
 
@@ -43,10 +44,10 @@ int main() {
 
 // Iterators:
 
-v.begin() //: Return iterator to beginning (public member function )
-v.end() //: Return iterator to end (public member function )
-v.rbegin() //: Return reverse iterator to reverse beginning (public member function )
-v.rend() //: Return reverse iterator to reverse end (public member function )
+    v.begin() //: Return iterator to beginning (public member function )
+    v.end() //: Return iterator to end (public member function )
+    v.rbegin() //: Return reverse iterator to reverse beginning (public member function )
+    v.rend() //: Return reverse iterator to reverse end (public member function )
 
 
 // single element (1)
@@ -103,4 +104,12 @@ vector1.insert( vector1.end(), vector2.begin(), vector2.end() );
     vector<vector<int>> vect(4, vector<int>(5, 1));
 
 	return 0;
+
+    // sorting
+    sort(vec, vec + vec.size())
 }
+
+INT_MAX
+UINT_MAX
+LONG_MAX
+ULONG_MAX

@@ -1,0 +1,8 @@
+Graph is a data structure that consists of following two components:
+1. A finite set of vertices also called as nodes.
+2. A finite set of ordered pair of the form (u, v) called as edge. 
+
+Following two are the most commonly used representations of a graph.
+1. Adjacency Matrix
+2. Adjacency List
+

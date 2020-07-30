@@ -1,0 +1,41 @@
+ASYMPTOTIC ANALYSIS
+
+how time or space taken by algorithm increases with input size.
+
+We can have three cases to analyze an algorithm:
+1) Worst Case
+2) Average Case
+3) Best Case
+
+WORST Case
+
+find the upper bound on running time of an algorithm. for example, for linear search O(n)
+
+Average Case Analysis (Sometimes done) 
+In average case analysis, we take all possible inputs and calculate computing time for all of the inputs. Sum all the calculated values and divide the sum by total number of inputs.
+
+Best Case Analysis (Bogus) 
+In the best case analysis, we calculate lower bound on running time of an algorithm. We must know the case that causes minimum number of operations to be executed. 
+
+
+
+The following 3 asymptotic notations are mostly used to represent time complexity of algorithms.
+
+1) Θ Notation: The theta notation bounds a functions from above and below, so it defines exact asymptotic behavior.
+A simple way to get Theta notation of an expression is to drop low order terms and ignore leading constants. For example, consider the following expression.
+3n3 + 6n2 + 6000 = Θ(n3)
+Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such 
+                 that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n >= n0}
+
+2) Big O Notation: The Big O notation defines an upper bound of an algorithm, it bounds a function only from above.
+O(g(n)) = { f(n): there exist positive constants c and 
+                  n0 such that 0 <= f(n) <= c*g(n) for 
+                  all n >= n0}
+
+3) Ω Notation: Just as Big O notation provides an asymptotic upper bound on a function, Ω notation provides an asymptotic lower bound.
+Ω (g(n)) = {f(n): there exist positive constants c and
+                  n0 such that 0 <= c*g(n) <= f(n) for
+                  all n >= n0}.
+
+There are two more notations called little o and little omega. Little o provides strict upper bound (equality condition is removed from Big O) and little omega provides strict lower bound (equality condition removed from big omega)
+
