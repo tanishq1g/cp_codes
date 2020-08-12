@@ -29,7 +29,7 @@ bool validateBST(Node * root, long long lowerlimit = LONG_MIN, long long upperli
     long int val = root->val;
     // cout<<"dsfg"<<val<<' '<<lowerlimit<<' '<<upperlimit<<'\n';
     if(val <= lowerlimit || val >= upperlimit){
-        cout<<"in\n";
+        // cout<<"in\n";
         return false;  
     } 
     if(!validateBST(root->left, lowerlimit , val)) return false;

@@ -61,6 +61,7 @@ int kosaraju(int V, vector<int> adj[]){
         }
     }
     delete adj;
+
     int count = 0;
     while(!st.empty()){
         int i = st.top();

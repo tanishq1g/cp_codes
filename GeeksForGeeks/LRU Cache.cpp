@@ -31,10 +31,11 @@ public:
     }
     
     int get(int key){
-        if(umap.find(key) == umap.end()){
+        unordered_map<int, list<pair<int, int>>::iterator >::iterator itr = umap.find(key);
+        if(itr == umap.end()){
             return -1;
         }
-        unordered_map<int, list<pair<int, int>>::iterator >::iterator itr = umap.find(key);
+        
         int x = itr->second->second;
         
         li.erase(itr->second);

@@ -82,8 +82,6 @@ Returns an iterator to the first element in the range [first,last) that compares
     else
         cout << "Element not found in myvector\n";
 
-        return 0;
-    }
 
 //binary search
     // Parameters
@@ -121,3 +119,20 @@ Returns an iterator to the first element in the range [first,last) that compares
     up= std::upper_bound (v.begin(), v.end(), 20); // 6
 
     Performs approximately log2(N)+1 element comparisons (where N is this distance).
+
+// lexicographical_compare
+https://en.cppreference.com/w/cpp/algorithm/lexicographical_compare
+bool lexicographical_compare(iter1 beg1, iter1 end1, iter2 beg2, iter2 end2)
+    char one[] = "geeksforgeeks"; 
+    char two[] = "gfg"; 
+      
+    // using lexicographical_compare for checking  
+    // is "one" is less than "two" 
+    if( lexicographical_compare(one, one+13, two, two+3)) { 
+        cout << "geeksforgeeks is lexicographically less than gfg";   
+    } 
+    else{ 
+        cout << "geeksforgeeks is not lexicographically less than gfg";     
+    } 
+    Output:
+    geeksforgeeks is lexicographically less than gfg

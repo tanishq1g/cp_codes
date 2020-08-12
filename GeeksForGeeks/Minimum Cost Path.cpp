@@ -122,6 +122,7 @@ int main(){
                 return false;
             }
         };
+
         multiset<pair<pair<int, int>, int>, cmp> lt;
 
         vis[0][0] = true;

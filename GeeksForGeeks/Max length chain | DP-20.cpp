@@ -40,9 +40,8 @@ int main(){
     }
     return 0;
 }
-int maxChainLen(struct val p[],int n)
-{
-//Your code here
+int maxChainLen(struct val p[],int n){
+    //Your code here
     sort(ve.begin(), ve.end(), comp);
     vector<int> inc(n, 1);
     ma = 0;

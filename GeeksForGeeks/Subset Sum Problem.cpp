@@ -19,7 +19,7 @@ bool subsetgivensum(vector<vector<int> > &dp, vector<int> &ve, int n, int sum){
         return dp[n][sum];
     }
     // cout << n << ' ' << sum << endl;
-    dp[n][sum] = subsetgivensum(dp, ve, n - 1, sum) || subsetgivensum(dp, ve, n - 1, sum - ve[n]);
+dp[n][sum] = subsetgivensum(dp, ve, n - 1, sum) || subsetgivensum(dp, ve, n - 1, sum - ve[n]);
     return dp[n][sum];
 }
 

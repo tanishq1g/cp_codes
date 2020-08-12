@@ -29,7 +29,7 @@ void dfs(vector<vector<int> > &g, string &ret, vector<bool> &vis, int ind){
 }
 
 string findOrder(string dict[], int n, int k) {
-    vector<vector<int> > g(k, vector<int>()); 
+    vector<vector<int> > g(k, vector<int>());
     int miind;
     string ret = "";
     for(int i = 1; i < n; i++){

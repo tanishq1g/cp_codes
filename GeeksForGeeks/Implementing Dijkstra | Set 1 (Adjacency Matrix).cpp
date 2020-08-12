@@ -22,6 +22,7 @@ vector <int> dijkstra(vector<vector<int>> g, int src, int V){
     int adjmin, adj;
     g[src][src] = 0;
     vis[src] = true;
+
     while(cvis < V){
         adjmin = INT_MAX;
         for(int i = 0; i < V; i++){
