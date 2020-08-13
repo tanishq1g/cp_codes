@@ -116,16 +116,17 @@ string str1 ("green apple");
             while(t--){
                 string s;
                 getline(cin, s);
+                
 // front, back of string - returns char
     str.front()
     str.back()
 
 // string insert
 
-    std::string str="to be question";
-    std::string str2="the ";
-    std::string str3="or not to be";
-    std::string::iterator it;
+    string str="to be question";
+    string str2="the ";
+    string str3="or not to be";
+    string::iterator it;
 
     // used in the same order as described above:
     str.insert(6,str2);                 // to be (the )question
@@ -157,15 +158,15 @@ string str1 ("green apple");
 // string erase
     string& erase (size_t pos = 0, size_t len = npos);
     
-    std::string str ("This is an example sentence.");
-    std::cout << str << '\n';
+    string str ("This is an example sentence.");
+    cout << str << '\n';
                                             // "This is an example sentence."
     str.erase (10,8);                        //            ^^^^^^^^
-    std::cout << str << '\n';
+    cout << str << '\n';
                                             // "This is an sentence."
     str.erase (str.begin()+9);               //           ^
-    std::cout << str << '\n';
+    cout << str << '\n';
                                             // "This is a sentence."
     str.erase (str.begin()+5, str.end()-9);  //       ^^^^^
-    std::cout << str << '\n';
+    cout << str << '\n';
                                             // "This sentence."

@@ -48,8 +48,6 @@ int main(){
 }
 
 
-using namespace std; 
-  
 // User defined class, Point 
 class Point 
 { 

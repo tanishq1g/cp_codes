@@ -123,6 +123,9 @@ Returns an iterator to the first element in the range [first,last) that compares
 // lexicographical_compare
 https://en.cppreference.com/w/cpp/algorithm/lexicographical_compare
 bool lexicographical_compare(iter1 beg1, iter1 end1, iter2 beg2, iter2 end2)
+    
+    Checks if the first range [first1, last1) is lexicographically less than the second range [first2, last2).
+
     char one[] = "geeksforgeeks"; 
     char two[] = "gfg"; 
       
