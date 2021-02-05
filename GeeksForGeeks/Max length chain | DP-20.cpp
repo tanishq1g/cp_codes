@@ -43,8 +43,10 @@ int main(){
 int maxChainLen(struct val p[],int n){
     //Your code here
     sort(ve.begin(), ve.end(), comp);
+    // 5  24  , 15 28, 27 40, 39 60 , 50 90
+        //  1        1      2     1         1
     vector<int> inc(n, 1);
-    ma = 0;
+    int ma = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < i; j++){
             if(ve[j][1] < ve[i][0]){

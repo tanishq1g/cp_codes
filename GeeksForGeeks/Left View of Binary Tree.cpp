@@ -34,9 +34,10 @@ void leftView(Node *root){
     q.push(root);
     int s = q.size();
     Node* temp = NULL;
-    while(q.size() != 0){
+    while(s != 0){
         for(int i = 0; i < s; i++){
-            temp = q.front();q.pop();
+            temp = q.front();
+            q.pop();
             if(i == 0){
                 cout << temp->data << ' ';
             }

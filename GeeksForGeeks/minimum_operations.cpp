@@ -14,7 +14,7 @@ using namespace std;
 int main(){
     int t, n, n2 = 2, count;
     cin >> t;
-    vector<int> dp(10001);
+    vector<int> dp(10001); //minimum operations required to reach i is dp[i]
     dp[0] = 0;
     dp[1] = 1;
     dp[2] = 2;

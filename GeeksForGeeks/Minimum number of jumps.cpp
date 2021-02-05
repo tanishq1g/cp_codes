@@ -39,3 +39,6 @@ int main(){
     }
     return 0;
 }
+
+
+https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/

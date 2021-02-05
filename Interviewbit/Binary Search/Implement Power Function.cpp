@@ -1,0 +1,39 @@
+int Solution::pow(int x, int n, int d) {
+    // int ans, sign = 1;
+    // if(x < 0){
+    //     if(n % 2 == 1){
+    //         sign = -1;
+    //     }
+    //     x *= -1;
+    // }
+    // if(x == 0)
+    //     return 0;
+        
+    // for(int i = 0; i < n; i++){
+    //     ans = (ans + x % d) % d;
+    // }
+    // if(n == 0)
+    //     ans = 1;
+    // if(sign == -1)
+    //     return d - ans;
+    // return ans;
+
+    if (n == 0) return 1 % p;
+
+            long long ans = 1, base = x;
+            while (n > 0) {
+                // We need (base ** n) % p. 
+                // Now there are 2 cases. 
+                // 1) n is even. Then we can make base = base^2 and n = n / 2.
+                // 2) n is odd. So we need base * base^(n-1) 
+                if (n % 2 == 1) {
+                    ans = (ans * base) % p;
+                    n--;
+                } else {
+                    base = (base * base) % p;
+                    n /= 2;
+                }
+            }
+            if (ans < 0) ans = (ans + p) % p;
+            return ans;
+}

@@ -12,8 +12,7 @@ using namespace std;
 int deno[] = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000}; 
 int n = sizeof(deno) / sizeof(deno[0]); 
 
-void findMin(int V) 
-{ 
+void findMin(int V) { 
 	sort(deno, deno + n); 
 
 	// Initialize result 
@@ -21,7 +20,6 @@ void findMin(int V)
 
 	// Traverse through all denomination 
 	for (int i = n - 1; i >= 0; i--) { 
-
 		// Find denominations 
 		while (V >= deno[i]) { 
 			V -= deno[i]; 
@@ -45,3 +43,4 @@ int main(){
     }
     return 0;
 }
+

@@ -13,7 +13,6 @@ using namespace std;
 
 // TREE
 
-
 void preorder(Node * root, int vl, vector<queue<int> > &vqf, vector<queue<int> > &vqb){
     if(!root)
         return;

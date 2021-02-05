@@ -17,7 +17,7 @@ Node * inorder2(Node * root){
     if(!root){
         return NULL;
     }
-    cout << root->data << endl;
+    // cout << root->data << endl;
     Node * l, * r;
     l = inorder2(root->left);
     if(l != NULL){

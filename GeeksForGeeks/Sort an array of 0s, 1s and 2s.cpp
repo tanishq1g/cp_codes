@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 #include <locale>
@@ -25,6 +24,16 @@ https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
 #include <iostream>
 using namespace std;
 
+   0| 1 |   | 2
+l m h
+  l   mh
+0 0 1 2 2
+
+m++
+a[l], a[m]
+l++, m++
+a[h], a[m]
+h--, m++
 int main() {
 	int T;
 	cin>>T;

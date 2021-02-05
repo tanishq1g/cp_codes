@@ -18,6 +18,12 @@ using namespace std;
 
 // array
 
+
+https://stackoverflow.com/questions/3492302/easy-interview-question-got-harder-given-numbers-1-100-find-the-missing-numbe
+
+https://www.geeksforgeeks.org/sum-of-kth-powers-of-first-n-natural-numbers/
+
+
 int main(){
     int t;
     cin >> t;

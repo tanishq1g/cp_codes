@@ -44,5 +44,6 @@ void printSpiral(Node *root){
         }
         l += 1;
         l %= 2;
+        // use flag
     }
 }

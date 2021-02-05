@@ -21,6 +21,7 @@ bool preorder(Node * root1, Node * root2){
     }
     return root1->data == root2->data && preorder(root1->left, root2->right) && preorder(root1->right, root2->left);
 }
+
 // return true/false denoting whether the tree is Symmetric or not
 bool isSymmetric(struct Node* root){
 	if(root == NULL)
